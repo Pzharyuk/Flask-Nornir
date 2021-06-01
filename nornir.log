@@ -1,0 +1,116 @@
+2021-05-30 23:51:48,318 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-30 23:52:03,477 - nornir.core.task -    ERROR -      start() - Host 'RTR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 93, in open
+    connection.open()
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 85, in open
+    self.channel.channel_authenticate_ssh(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 275, in decorate
+    return self._multiprocessing_timeout(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 336, in _multiprocessing_timeout
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 433, in result
+    return self.__get_result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 243, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 200, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2021-05-30 23:52:03,479 - nornir.core.task -    ERROR -      start() - Host 'RTR2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 93, in open
+    connection.open()
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 85, in open
+    self.channel.channel_authenticate_ssh(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 275, in decorate
+    return self._multiprocessing_timeout(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 336, in _multiprocessing_timeout
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 433, in result
+    return self.__get_result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 243, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 200, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2021-05-30 23:52:03,481 - nornir.core.task -    ERROR -      start() - Host 'RT31': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/nornir_scrapli/connection.py", line 93, in open
+    connection.open()
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/driver/base/sync_driver.py", line 85, in open
+    self.channel.channel_authenticate_ssh(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 275, in decorate
+    return self._multiprocessing_timeout(
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/decorators.py", line 336, in _multiprocessing_timeout
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 433, in result
+    return self.__get_result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/sync_channel.py", line 243, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/Users/pzharyuk/OneDrive/Documents/Coding/flask-nornir/.venv/lib/python3.9/site-packages/scrapli/channel/base_channel.py", line 200, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2021-05-30 23:52:49,120 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:08:53,613 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:17:47,920 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:17:51,463 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:18:00,841 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:18:25,418 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:19:49,832 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 00:22:50,128 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 18:16:30,229 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:19:56,003 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:22:08,915 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:29:57,907 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:38:08,264 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 18:38:09,178 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 18:38:17,294 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:39:05,425 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:42:43,029 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:43:07,993 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:44:43,760 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 18:53:25,719 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-05-31 18:54:12,441 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-05-31 19:07:58,978 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 19:09:13,248 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show run'} on 3 hosts
+2021-05-31 19:09:19,704 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
+2021-05-31 19:09:51,497 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 3 hosts
